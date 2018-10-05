@@ -39,12 +39,12 @@ Main Features
 Getting Started
 ---------------
 
-* git clone --recursive git://github.com/Thesis/Thesis.git
+* git clone --recursive git://github.com/tubav/Thesis.git
 * cd Thesis
 * make clean full
 * make # to show all options
 
-Next, open [https://github.com/thesis/Thesis](https://github.com/thesis/Thesis) for further details. Also check out [https://github.com/thesis/Paper](https://github.com/thesis/Paper).
+Next, open [https://github.com/tubav/Thesis](https://github.com/tubav/Thesis) for further details. Also check out [https://github.com/tubav/Paper](https://github.com/tubav/Paper).
 
 All make targets
 ----------------
