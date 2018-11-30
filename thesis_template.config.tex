@@ -6,8 +6,8 @@
         %fontsize=12pt,         % font size
         headsepline,            % use headinclude also! (see M. Kohm)
         footsepline,            % use footinclude also! (see M. Kohm)
-        headinclude,            % count head to text body (not to margin)
-        footinclude,            % count foot to text body (not to margin)
+        %headinclude,            % count head to text body (not to margin)
+        %footinclude,            % count foot to text body (not to margin)
         %BCOR8mm,               % set extra margin for book fixation
         headsepline,            % line on the top
         titlepage,              % show a title page
@@ -155,6 +155,23 @@
 % ------------------------------------------------------------------------------
 
 
+% more config ------------------------------------------------------------------
+% todo: move to 'basic config'
+\usepackage{lmodern}                          % Nicer fonts (for all) - times
+\usepackage{mathptmx}                         % Nicer fonts (for all) - times
+%\usepackage{scrhack}                         % Fix some scrbook issues
+\usepackage{scrlayer-scrpage}                 % before titlesec 
+\usepackage{chapterthumb}                     % Fancy thumb index
+\usepackage[chapter]{algorithm}               % Nice pseudo code
+\usepackage{lettrine}                         % Drop characters, if you like
+\renewcommand{\LettrineFontHook}{\color{CaptionColor}}
+\usepackage[nohints]{minitoc}                 % ToC for chapters
+\dominitoc[n]                                 % ToC: no caption
+\renewcommand{\mtcSfont}{\small}              % ToC: small
+\usepackage{makeidx}                          % Make an index
+\makeindex                                    % Make an index
+% ------------------------------------------------------------------------------
+
 % chapter layout ---------------------------------------------------------------
 %\usepackage[Sonny]{fncychap}                  % Nice chapter header
 %\ChNameVar{\vspace*{-1in}\Large\rmfamily\vspace*{-2in}}   % Fancy chapter with serifs
@@ -168,24 +185,6 @@
   {\titlerule\vspace{1ex}\filleft}
   [\vspace{1ex}\titlerule]
 % ------------------------------------------------------------------------------
-
-
-% more config ------------------------------------------------------------------
-% todo: move to 'basic config'
-\usepackage{lmodern}                          % Nicer fonts (for all) - times
-\usepackage{mathptmx}                         % Nicer fonts (for all) - times
-%\usepackage{scrhack}                         % Fix some scrbook issues
-\usepackage{chapterthumb}                     % Fancy thumb index
-\usepackage[chapter]{algorithm}               % Nice pseudo code
-\usepackage{lettrine}                         % Drop characters, if you like
-\renewcommand{\LettrineFontHook}{\color{CaptionColor}}
-\usepackage[nohints]{minitoc}                 % ToC for chapters
-\dominitoc[n]                                 % ToC: no caption
-\renewcommand{\mtcSfont}{\small}              % ToC: small
-\usepackage{makeidx}                          % Make an index
-\makeindex                                    % Make an index
-% ------------------------------------------------------------------------------
-
 
 % spqueezing -------------------------------------------------------------------
 %\usepackage{etoolbox}

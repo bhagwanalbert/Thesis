@@ -15,6 +15,8 @@
 %\PassOptionsToPackage{cmyk}{xcolor}   % PDF/A compatibility, skipped
 %\usepackage[a-2b]{pdfx}               % PDF/A compatibility, skipped
 \newcommand{\isFinal}{true}            % Modify e.g. the title page
+\AddLayersToPageStyle{@everystyle@}{chapterthumb}
+\addtokomafont{chapterthumb}{\bfseries}
 % ------------------------------------------------------------------------------
 
 
@@ -34,7 +36,7 @@
     \cleardoublepage
 
     \pagestyle{scrheadings}
-    \lohead[]{}
+    %\lohead[]{}
     \pagenumbering{roman}
     \setcounter{page}{1}
     \include{src/00_acknowledgment}\cleardoublepage{}
@@ -44,7 +46,7 @@
     \include{src/00_tables}\cleardoublepage
 
     \mainmatter
-    \lohead[\putchapterthumb]{\putchapterthumb}
+    %\lohead[\putchapterthumb]{\putchapterthumb}
     \pagenumbering{arabic}
     \setcounter{page}{1}
     \linenumbers
