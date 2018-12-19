@@ -147,6 +147,42 @@
         \acro_first_upper:
         \acro_long:n {#1}
       }
+	% genitive: 
+    \ProvideAcroEnding{genitive}{}{s} 
+	\NewAcroCommand \acg { 
+	  \acro_genitive: 
+	  \acro_use:n {#1} 
+	} 
+	\NewAcroCommand \aclg { 
+	  \acro_genitive: 
+	  \acro_long:n {#1} 
+	} 
+	\NewAcroCommand \acsg { 
+	  \acro_genitive: 
+	  \acro_short:n {#1} 
+	} 
+	\NewAcroCommand \acfg { 
+	  \acro_genitive: 
+	  \acro_first:n {#1} 
+	} 
+	% dative: 
+	\ProvideAcroEnding{dative}{}{} 
+	\NewAcroCommand \acd { 
+	  \acro_dative: 
+	  \acro_use:n {#1} 
+	} 
+	\NewAcroCommand \acsd { 
+	  \acro_dative: 
+	  \acro_short:n {#1} 
+	} 
+	\NewAcroCommand \acld { 
+	  \acro_dative: 
+	  \acro_long:n {#1} 
+	} 
+	\NewAcroCommand \acfd { 
+	  \acro_dative: 
+	  \acro_first:n {#1} 
+	}
     \ExplSyntaxOff%
 \else
     \newcommand{\aclu}[1]{\acs{#1}}
