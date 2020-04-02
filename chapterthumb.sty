@@ -28,6 +28,7 @@
 \newcommand*{\chapterthumbboxcolor}{black}
 \newcommand*{\chapterthumbcolor}{white}
 \newcommand*{\chapterthumbformat}{\@chapapp~\thechapter}
+\newcommand*{\chapterthumbbleed}{5mm}
 \newkomafont{chapterthumb}{\normalfont\Large\sffamily}
 \newcommand*{\chapterthumbbox}{%
   \if@mainmatter
@@ -68,13 +69,17 @@
             \rotatebox[origin=tl]{90}{%
               \setlength{\fboxsep}{0pt}%
               \colorbox{\chapterthumbboxcolor}{%
-                \parbox[c][\chapterthumbheight][c]%
+                \parbox[t][\dimexpr \chapterthumbheight+\chapterthumbbleed\relax][t]%
                 {\chapterthumbwidth}{%
-                  \centering
-                  \color{\chapterthumbcolor}%
-                  \usekomafont{chapterthumb}{%
-                    \chapterthumbformat
-                  }}}}}%
+                  \parbox[c][\chapterthumbheight][c]%
+                  {\chapterthumbwidth}{%
+                    \centering
+                    \color{\chapterthumbcolor}%
+                    \usekomafont{chapterthumb}{%
+                      \chapterthumbformat
+            }}}}}
+          \hskip-\chapterthumbbleed%
+          }%
         \endgroup
       \fi
     \fi
