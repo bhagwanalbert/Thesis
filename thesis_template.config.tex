@@ -96,11 +96,8 @@
             single=false,
             list/sort=true,
             list/template=longtable,
-            %page-style=dotfill, % or =plain
             index/use, %  migh result in 'pdfTeX warning (dest): name... has been referenced but does not exist, replaced by a fixed one'
             pages/display=first,
-            %page-name={},
-            %pages-name={},
 }
 \robustify\footnote%
 \robustify\url%
@@ -239,6 +236,7 @@ hypertexnames=true                    % Whatever ;)
 ]{hyperref}                           % Use hyperlinks
 %\renewcommand*{\backref}[1]{[cited at page #1]} % Show formatted backlinks
 \usepackage{bookmark}                 % Manually add PDF bookmarks
+\hypersetup{keeppdfinfo}              % fix for hyperxmp, however, breaks PDF/A compliance
 % ------------------------------------------------------------------------------
 
 
