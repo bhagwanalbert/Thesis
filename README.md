@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tubav/Thesis.svg?branch=master)](https://travis-ci.org/tubav/Thesis)
+
 Sophisticated LaTeX Thesis Template
 ===================================
 
