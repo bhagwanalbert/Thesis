@@ -31,7 +31,10 @@ install:
   - sudo dpkg -i plantuml_7707-1_all.deb
 
 script:
-  - time make clean all verify bibchk || cat build.sh.log
+  - time make clean all
+
+after_failure:
+  - cat build.sh.log
 
 notifications:
   email:
