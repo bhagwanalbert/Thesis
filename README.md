@@ -1,10 +1,8 @@
+# Sophisticated LaTeX Thesis Template
+
 [![Build Status](https://travis-ci.org/tubav/Thesis.svg?branch=master)](https://travis-ci.org/tubav/Thesis)
 
-Sophisticated LaTeX Thesis Template
-===================================
-
-Abstract
---------
+## Abstract
 
 During their studies most students will be faced to the decision whether
 to use LaTeX or an other word processor to write a thesis. Since there are a
@@ -24,8 +22,7 @@ necessary and nice to have features someone might need writing a thesis.
 
 So please checkout the template (for both, a thesis and a paper), test it, spread the word, and contribute.
 
-Main Features
--------------
+## Main Features
 
 * PDF support: hyperlinks, ToC, annotations, metadata, linearlization, digital signatures, PDF/A2-b
 * Language support: UTF8 encoding, support for CJK and German
@@ -38,19 +35,51 @@ Main Features
 * Bibliography: multiple files and types, link to the source page, show unreferenced items
 * Other: side notes, line numbering, chapter thumbs
 
-Getting Started
----------------
+## Quick Start
 
-* git clone --recursive git://github.com/tubav/Thesis.git
-* cd Thesis
-* make clean full
-* make # to show all options
+Assuming you've already a complete LaTeX installation:
+
+```bash
+git clone --recursive git://github.com/tubav/Thesis.git
+cd Thesis
+make clean full
+make # to show all options
+```
 
 Next, open [https://github.com/tubav/Thesis](https://github.com/tubav/Thesis) for further details. Also check out [https://github.com/tubav/Paper](https://github.com/tubav/Paper).
 
-All make targets
-----------------
+## Installation
+
+### Ubuntu
+
+```bash
+$ sudo apt install git fonts-sil-gentium fonts-sil-gentium-basic texlive-fonts-extra fonts-inconsolata texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-humanities texlive-science cm-super aspell gnuplot r-base graphviz plantuml
+$ tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
 ```
+
+### macOS
+
+#### Minimal installation (400 MB)
+
+```bash
+$ brew cask install basictex
+$ tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
+$ make deps
+```
+
+#### Full installation (5.5 GB)
+
+```bash
+$ brew cask install mactex
+$ brew tap homebrew/science
+$ brew install plantuml graphviz gnuplot r aspell --with-lang-de
+$ tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
+$ make deps
+```
+
+## All make targets
+
+```text
 * clean     : Delete temporary files
 * all       : Create the PDF file (run everything needed)
 * full      : Create the PDF file (run LaTeX and BibTeX only)
@@ -73,14 +102,13 @@ All make targets
 * preflight : Test for PDF/A and PDF/X compatibility
 ```
 
-Proven
-------
+## Proven
 
 The template and build environment is proven to work
 with a reasonable large document (250 page, 450 references),
 without showing a single (unfiltered) warning message:
 
-```
+```bash
 $ time make clean full verify bibchk
 Cleaning up...done
 Sorting acronyms...done
