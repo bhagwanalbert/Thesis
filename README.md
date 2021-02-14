@@ -1,6 +1,6 @@
 # Sophisticated LaTeX Thesis Template
 
-[![Build Status](https://travis-ci.org/tubav/Thesis.svg?branch=master)](https://travis-ci.org/tubav/Thesis)
+[![Build Status](https://github.com/tubav/Thesis/workflows/test/badge.svg)](https://github.com/tubav/Thesis/actions)
 
 ## Abstract
 
@@ -53,8 +53,8 @@ Next, open [https://github.com/tubav/Thesis](https://github.com/tubav/Thesis) fo
 ### Ubuntu
 
 ```bash
-$ sudo apt install git fonts-sil-gentium fonts-sil-gentium-basic texlive-fonts-extra fonts-inconsolata texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-humanities texlive-science cm-super aspell gnuplot r-base graphviz plantuml
-$ tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
+# Installs all TexLive packages and tools (aspell graphviz gnuplot r-base plantuml)
+make deps-lin
 ```
 
 ### macOS
@@ -62,19 +62,16 @@ $ tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
 #### Minimal installation (400 MB)
 
 ```bash
-$ brew cask install basictex
-$ tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
-$ make deps
+brew install basictex
+tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
+make deps
 ```
 
 #### Full installation (5.5 GB)
 
 ```bash
-$ brew cask install mactex
-$ brew tap homebrew/science
-$ brew install plantuml graphviz gnuplot r aspell --with-lang-de
-$ tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
-$ make deps
+# Installs complete TexLive and tools (aspell graphviz gnuplot r-base plantuml)
+make deps-mac
 ```
 
 ## All make targets
