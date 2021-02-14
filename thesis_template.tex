@@ -30,20 +30,20 @@
     \frontmatter
     \pagestyle{empty}
     \pagenumbering{alph}
-    \include{src/00_title}
-    \cleardoublepage\include{src/00_deposition}
-    \cleardoublepage\include{src/00_dedication}
+    \input{src/00_title}
+    \cleardoublepage\input{src/00_deposition}
+    \cleardoublepage\input{src/00_dedication}
     \cleardoublepage
 
     \pagestyle{scrheadings}
     %\lohead[]{}
     \pagenumbering{roman}
     \setcounter{page}{1}
-    \include{src/00_acknowledgment}\cleardoublepage{}
-    \include{src/00_abstract}\cleardoublepage
+    \input{src/00_acknowledgment}\cleardoublepage{}
+    \input{src/00_abstract}\cleardoublepage
 
     \phantomsection
-    \include{src/00_tables}\cleardoublepage
+    \input{src/00_tables}\cleardoublepage
 
     \mainmatter
     %\lohead[\putchapterthumb]{\putchapterthumb}
@@ -51,26 +51,26 @@
     \setcounter{page}{1}
     \linenumbers
     \acresetall%
-    \include{src/01_introduction}
-    \include{src/02_sota}
-    \include{src/03_requirements}
-    \include{src/04_contrib1}
-    \include{src/05_contrib2}
-    \include{src/06_contrib3}
-    \include{src/07_evaluation}
-    \include{src/08_summary}
+    \input{src/01_introduction}
+    \input{src/02_sota}
+    \input{src/03_requirements}
+    \input{src/04_contrib1}
+    \input{src/05_contrib2}
+    \input{src/06_contrib3}
+    \input{src/07_evaluation}
+    \input{src/08_summary}
     \nolinenumbers
     \cleardoublepage
 
     \appendix
     \pagenumbering{Roman}
     \setcounter{page}{1}
-    \include{src/09_appendix}
+    \input{src/09_appendix}
 
     \cleardoublepage
-    \include{src/10_bibliography}
+    \input{src/10_bibliography}
 
     \backmatter
-    \cleardoublepage\include{src/11_index}
+    \cleardoublepage\input{src/11_index}
 \end{document}
 % ------------------------------------------------------------------------------
