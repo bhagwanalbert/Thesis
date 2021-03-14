@@ -40,7 +40,7 @@ So please checkout the template (for both, a thesis and a paper), test it, sprea
 Assuming you've already a complete LaTeX installation:
 
 ```bash
-git clone --recursive git://github.com/tubav/Thesis.git
+git clone --recursive https://github.com/tubav/Thesis.git
 cd Thesis
 make clean full
 make # to show all options
