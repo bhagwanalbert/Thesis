@@ -37,7 +37,7 @@ So please checkout the template (for both, a thesis and a paper), test it, sprea
 
 ## Quick Start
 
-Assuming you've already a complete LaTeX installation:
+Assuming you've already a complete LaTeX installation (at least TeX Live version 2020):
 
 ```bash
 git clone --recursive https://github.com/tubav/Thesis.git
