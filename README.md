@@ -37,10 +37,10 @@ So please checkout the template (for both, a thesis and a paper), test it, sprea
 
 ## Quick Start
 
-Assuming you've already a complete LaTeX installation:
+Assuming you've already a complete LaTeX installation (at least TeX Live version 2020 - on older Ubuntu installations follow [this intruction](https://tex.stackexchange.com/questions/540429/tlmgr-in-ubuntu-20-04-local-tex-live-2019-is-older-than-remote-repository-2/545502#545502)):
 
 ```bash
-git clone --recursive git://github.com/tubav/Thesis.git
+git clone --recursive https://github.com/tubav/Thesis.git
 cd Thesis
 make clean full
 make # to show all options
