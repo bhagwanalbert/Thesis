@@ -1,3 +1,6 @@
 [submodule "lib"]
 	path = lib
 	url = git://github.com/tubav/Core.git
+	branch = master
+[lib]
+	branch = master
