@@ -32,7 +32,6 @@
     \pagenumbering{alph}
     \input{src/00_title}
     \cleardoublepage\input{src/00_deposition}
-    \cleardoublepage\input{src/00_dedication}
     \cleardoublepage
 
     \pagestyle{scrheadings}
@@ -49,7 +48,7 @@
     %\lohead[\putchapterthumb]{\putchapterthumb}
     \pagenumbering{arabic}
     \setcounter{page}{1}
-    \linenumbers
+    %\linenumbers
     \acresetall%
     \input{src/01_introduction}
     \input{src/02_sota}
@@ -71,6 +70,5 @@
     \input{src/10_bibliography}
 
     \backmatter
-    \cleardoublepage\input{src/11_index}
 \end{document}
 % ------------------------------------------------------------------------------

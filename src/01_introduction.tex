@@ -1,87 +1,31 @@
-\cleardoublepage\chapter{Introduction}
-\minitoc\label{sec:introduction}\vspace{.5cm}
+\cleardoublepage\chapter{Introduction}\label{sec:introduction}
 
 \section{Background and Motivation}
 
-\sidenote{Research Context: Foo}
-\todomid{write about the research context \gls{Foo}}\index{Foo}
+As a student of a double MsC in Industrial Engineering and Automatic Control and Robotics with experience in research in robotics field, my aim was to work on a thesis in a cutting edge topic about robotics which is applicable to the industry. After contacting my supervisor, I got the opportunity to work on part of a project called "Online in-hand object tracking and grasp failure detection with an event-based camera", which is a Amazon Research Awards Proposal.\\
 
-\sidenote{Research Area: Bar}
-\todomid{write about the research area and \Cref{fig:intro:a}}\index{Bar}
+The two main expected outcomes of this project are the creation of a dataset using event-based cameras for manipulation and the design of an algorithm capable to detect grasp failure and object slipping and recover from it in real-time. This project is really relevant for Amazon, as the automation of the package preparation requires to effectively perform pick and place motions by robotic arms. Actually, every year Amazon organizes the Amazon Robotics Challenge, where several teams try to solve a proposed problem. Concretely, they have asked the teams to develop an algorithm to grasp, recognize and place objects in clutter.\\
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.55\textwidth]{resources/images/example1}
-    \caption{Example (based on~\cite{li2002design})}\label{fig:intro:a}
-\end{figure}
+The problem of object tracking during manipulation to detect grasp failure and object slipping requires of in-hand object perception, which typically is approached with tactile sensing. However, tactile sensors may have disadvantages in industrial settings due to wear and a lack of long-term robustness. Additionally, they are expensive and provide only limited local information to infer the motion of objects that extend far beyond the contact region. This is why in this project event-based cameras, that provide an external view of the grasping operation, are explored as a novel alternative technology for high-speed in-hand object tracking, as for real-time grasping failure mitigation a fast detection is required.
 
-\sidenote{Application Area: Foo Fooli}\index{Foo!Fooli}
-\todomid{write about the application area~\cite{Heflin2004}}
+\section{Objectives}
 
-\begin{figure}[H]
-      \centering
-      \includegraphics[width=.45\textwidth]{resources/images/example2}
-      \caption{Another example~\cite{li2002design}}\label{fig:intro:b}
-\end{figure}
+The project "Online in-hand object tracking and grasp failure detection with an event-based camera" is planned to be completed in at least 1 year, and it has started at the same time as this thesis, i.e. in April 2021. Therefore, this thesis is meant to describe the initial results of this project, being the concrete objectives:
 
-\sidenote{Research Focus: Bar Barli}\index{Bar!Barli}
-\todomid{write about the research focus and \Cref{fig:intro:b}}
-
-\sidenote{Taxonomy}\index{Taxonomy}
-\todomid{write about the taxonomy and \ac{ABAC}}
-
-\begin{figure}[htbp]
-      \centering
-      \includegraphics[width=.75\textwidth]{resources/images/example3}
-      \caption{Taxonomy}
-\end{figure}
-
-\section{Problem Statement}\index{Requirements}
-
-\sidenote{State of the Art}
-\todomid{write about the State of the Art}
-
-\sidenote{Issue:\\Example 1}
-\todomid{write about the first issue}
-
-\sidenote{Issue:\\Example 2}
-\todomid{write about the second issue}
-
-\sidenote{Synopsis}
-\todomid{write about the synopsis of the issues and \Cref{fig:intro:c}}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=.5\textwidth]{resources/images/job_lifecycle}
-    \caption{Relationship between issues}\label{fig:intro:c}
-\end{figure}
+\begin{itemize}
+	\item Setup the experimental environment: robot, gripper, event-based camera and objects to be manipulated.
+	\item Setup the software to execute pick and place motions and collect data.
+	\item Generate an initial dataset containing slip and non-slip cases in pick and place motions.
+	\item Explore of different methods to detect slip cases and compare them.
+	\item Build an initial algorithm capable of detecting slip cases in pick and place motions.
+\end{itemize}
 
 \section{Assumptions and Scope}
 
-\sidenote{Research Assumptions}
-\todomid{write about the research assumptions~\cite{li2002design}}
+As the thesis is an initial part of the aforementioned Amazon project, for the purpose of this thesis it has been assumed that the pick and place motions happen in a non-cluttered environment, having only one pickable object in the scene. Moreover, the complete trajectory is given, including not only the shape of it, but also the initial and and final positions. Therefore, it is assumed that some external object recognition algorithm will recognize the object to be picked and provide its position. Finally, the there are no obstacles present in the environment, so that the trajectory is collision-free at all moments.\\
 
-\sidenote{Research Scope}
-\todomid{write about the research scope --- \Cref{fig:intro:a,fig:intro:b,fig:intro:c}}
+In terms of the scope, this study is focused on exploring different kinds of slips and grasping failures during manipulations, but only providing a solution for a particular kind of slip, namely rotational slip, which mainly occurs due to off-centered grasping of the object. In addition, the goal is only to detect such kind of slippage without trying to modify the trajectory with any kind of closed-loop control, which would use the information provided by the detection algorithm.
 
+\section{Outline}
 
-\section{Objectives and Contributions}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=.55\textwidth]{resources/images/example3}
-    \caption{Structure of research}\label{fig:intro:struct}
-\end{figure}
-
-\sidenote{Research Objectives \& Contributions}
-\todomid{write about the research objectives and \ac{DBpedia} and \Cref{fig:intro:struct}}
-
-\section{Methodology and Outline}
-
-\todomid{write about the research outline and \Cref{fig:intro:methodology}. Summarize \Cref{sec:introduction,sec:sota,sec:reqs,sec:contrib1,sec:contrib2,sec:contrib3,sec:eval,sec:summary}.}
-
-\begin{sidewaysfigure}
-    \centering
-    \includegraphics[width=.7\textwidth]{resources/images/example3}
-    \caption{Workflow of the research and structure of the thesis}\label{fig:intro:methodology}
-\end{sidewaysfigure}
+\todo{Cite like this: \Cref{sec:introduction}}
