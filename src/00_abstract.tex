@@ -1,49 +1,32 @@
 \pdfbookmark{Abstract}{abstract}
 \chapter*{Abstract}
 
-{\setlength{\parindent}{-.1cm}%
-\sidenote{Research Area:\\Foo Bar}%
-\todomid{write about the research area}
+Pick-and-place motions executed by robotic arms are widely used in the industry and they need to be performed effectively and without errors, such as slips and grasp failures. Concretely, rotational slip may occur when the object is grasped away from its center of mass and may cause issues when placing it due to its change of orientation. In this thesis, this problem is tackled using an event-based camera, which is designed to trigger an input event only the change in illumination at a specific image location crosses a predefined threshold. This enables us to exclude redundant information from static parts of the scene and build systems with low latency, high dynamic range, high temporal resolution and low power consumption.\\
 
-\sidenote{Application Area:\\Bar Foo}
-\todomid{write about the application area}
+The topic of slip detection in manipulation tasks using event-based cameras is novel. Only a handful of papers in the literature tackle this problem and most of them do not perform as large motions as this thesis considers, typical of pick-and-place scenarios.\\
 
-\sidenote{Research Issue:\\Foo Fooli}
-\todomid{write about the research issue}
+The main contributions of this work are the design of the data acquisition system and some exploration on data processing methods to infer properties of the scene (motion, slip, etc.) from the data acquired by the platform. In terms of the experiment setup, the event-based camera (DAVIS 346) is mounted to the robotic arm (Panda) with the designed reconfigurable camera mount, offering an external view of the contact between the object and the two-finger parallel gripper used as end-effector. With this setup some small sets of data were recorded, containing slip and non-slip cases during pick-and-place motions with different objects and backgrounds. Since this is an exploratory topic and data is therefore scarce, the approach to data processing consists of feature engineering. To this end, events are processed to investigate the usefulness of alternative representations, such as event histograms and optical flow, to detect slip. Concretely, the ratio between the events coming from the object and the whole image and the vertical absolute mean velocity of the object are considered as one-dimensional signals, which can be thresholded to determine whether a slip is happening or not. In order to discriminate the events related to the object from the background, several solutions are proposed and compared.\\
 
-\sidenote{Own Approach:\\Bar Barli}
-\todomid{write about the own approach}
+The results show that indeed, both signals are informative for slip detection, presenting some limitations to generalize for different objects and backgrounds. In the end, some possible solutions to the detailed limitations are proposed.\\
 
-\sidenote{Scientific Contributions}
-\todomid{write about the scientific contributions}
-
-\sidenote{Validation \& Outlook}
-\todomid{write about the validation and outlook}
+\textbf{Keywords:} Event-based cameras, slip detection, manipulation, pick-and-place motions, event processing
 
 \cleardoublepage
 \begin{otherlanguage}{ngerman}
 \pdfbookmark{Zusammenfassung}{Zusammenfassung}
 \chapter*{Zusammenfassung}%
 
-\sidenote{For\-schungs\-be\-reich:\\Foo Bar}%
-\todomid{write}
+Pick-and-Place-Bewegungen, die von Roboterarmen ausgeführt werden, sind in der Industrie weit verbreitet und müssen effektiv und ohne Fehler, wie z. B. Schlupf und Greiffehler, durchgeführt werden. Konkret kann es zu einem Drehschlupf kommen, wenn das Objekt außerhalb seines Schwerpunkts gegriffen wird, was zu Problemen bei der Platzierung führen kann, da sich die Ausrichtung des Objekts ändert. In dieser Arbeit wird dieses Problem mit einer ereignisbasierten Kamera angegangen, die so konzipiert ist, dass sie nur dann ein Eingabeereignis auslöst, wenn die Beleuchtungsänderung an einer bestimmten Bildposition einen vordefinierten Schwellenwert überschreitet. Dies ermöglicht es uns, redundante Informationen aus statischen Teilen der Szene auszuschließen und Systeme mit geringer Latenz, hohem Dynamikbereich, hoher zeitlicher Auflösung und geringem Stromverbrauch zu entwickeln.\\
 
-\sidenote{Ein\-grenz\-ung:\\Bar Foo}
-\todomid{write}
+Das Thema der Schlupfdetektion bei Manipulationsaufgaben mit ereignisbasierten Kameras ist neu. In der Literatur gibt es nur eine Handvoll Arbeiten, die sich mit diesem Problem befassen, und die meisten von ihnen behandeln keine so großen Bewegungen wie die in dieser Arbeit betrachteten, die für Pick-and-Place-Szenarien typisch sind.\\
 
-\sidenote{Pro\-blem\-stel\-lung:\\Foo Fooli}
-\todomid{write}
+Die wichtigsten Beiträge dieser Arbeit sind der Entwurf des Datenerfassungssystems und einige Untersuchungen zu Datenverarbeitungsmethoden, um aus den von der Plattform erfassten Daten Eigenschaften der Szene (Bewegung, Schlupf usw.) abzuleiten. Die ereignisbasierte Kamera (DAVIS 346) ist mit der neu konfigurierbaren Kamerahalterung am Roboterarm (Panda) angebracht und bietet eine externe Sicht auf den Kontakt zwischen dem Objekt und dem als Endeffektor verwendeten Zweifingergreifer. Mit diesem Aufbau wurden einige kleine Datensätze aufgezeichnet, die Fälle von Schlupf und Nicht-Schlupf bei Pick-and-Place-Bewegungen mit verschiedenen Objekten und Hintergründen enthalten. Da es sich um ein exploratives Thema handelt und die Daten daher spärlich sind, besteht der Ansatz zur Datenverarbeitung im Feature Engineering. Zu diesem Zweck werden Ereignisse verarbeitet, um die Nützlichkeit alternativer Darstellungen, wie Ereignis-Histogramme und optischer Fluss, zur Erkennung von Schlupf zu untersuchen. Konkret werden das Verhältnis zwischen den Ereignissen, die vom Objekt und dem gesamten Bild stammen, und die vertikale absolute Durchschnittsgeschwindigkeit des Objekts als eindimensionale Signale betrachtet, für die ein Schwellenwert festgelegt werden kann, um festzustellen, ob ein Schlupf vorliegt oder nicht. Um die Ereignisse, die mit dem Objekt zusammenhängen, vom Hintergrund zu unterscheiden, werden einige Lösungen vorgeschlagen und verglichen.\\
 
-\sidenote{Eigener Ansatz:\\Bar Barli}
-\todomid{write}
+Die Ergebnisse zeigen, dass beide Signale in der Tat informativ für die Erkennung von Rutschen sind, wobei die Verallgemeinerbarkeit für verschiedene Objekte und Hintergründe eingeschränkt ist. Am Ende werden einige mögliche Lösungen für die detaillierten Einschränkungen vorgeschlagen.\\
 
-\sidenote{Wis\-sen\-schaft\-lich\-er Bei\-trag}
-\todomid{write}
-
-\sidenote{Va\-li\-die\-rung \& Aus\-blick}
-\todomid{write}
+\textbf{Schlüsselwörter:} Ereignisbasierte Kameras, Schlupferkennung, Manipulation, Pick-and-Place-Bewegungen, Ereignisverarbeitung
 
 \end{otherlanguage}
 
-}
+
 \cleardoublepage

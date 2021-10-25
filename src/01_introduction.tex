@@ -2,30 +2,30 @@
 
 \section{Background and Motivation}
 
-As a student of a double MsC in Industrial Engineering and Automatic Control and Robotics with experience in research in robotics field, my aim was to work on a thesis in a cutting edge topic about robotics which is applicable to the industry. After contacting my supervisor, I got the opportunity to work on part of a project called "Online in-hand object tracking and grasp failure detection with an event-based camera", which is a Amazon Research Awards Proposal.\\
+As a student of a double MsC in Industrial Engineering and Automatic Control and Robotics with experience in research in robotics field, my aim was to work on a thesis in a cutting edge topic about robotics which is applicable to the industry. After contacting my supervisor, I got the opportunity to work on part of a project called "Online in-hand object tracking and grasp failure detection with an event-based camera", which has been selected as a project of the Amazon Research Awards 2021.\\
 
-The two main expected outcomes of this project are the creation of a dataset using event-based cameras for manipulation and the design of an algorithm capable to detect grasp failure and object slipping and recover from it in real-time. This project is really relevant for Amazon, as the automation of the package preparation requires to effectively perform pick and place motions by robotic arms. Actually, every year Amazon organizes the Amazon Robotics Challenge, where several teams try to solve a proposed problem. Concretely, they have asked the teams to develop an algorithm to grasp, recognize and place objects in clutter.\\
+The two main expected outcomes of this project are the creation of a dataset using event-based cameras for manipulation and the design of an algorithm capable to detect grasp failure and object slipping and recover from it in real-time. This project is really relevant for the logistic industry, as the automation of the package preparation requires to effectively perform pick-and-place motions by robotic arms. Actually, in the research community, these type of problems have been covered by competitions, such as the Amazon Robotics Challenge, where several teams try to solve a proposed problem. Concretely, they have asked the teams to develop an algorithm to grasp, recognize and place objects in clutter.\\
 
 The problem of object tracking during manipulation to detect grasp failure and object slipping requires of in-hand object perception, which typically is approached with tactile sensing. However, tactile sensors may have disadvantages in industrial settings due to wear and a lack of long-term robustness. Additionally, they are expensive and provide only limited local information to infer the motion of objects that extend far beyond the contact region. This is why in this project event-based cameras, that provide an external view of the grasping operation, are explored as a novel alternative technology for high-speed in-hand object tracking, as for real-time grasping failure mitigation a fast detection is required.
 
 \section{Objectives}
 
-The project "Online in-hand object tracking and grasp failure detection with an event-based camera" is planned to be completed in at least 1 year, and it has started at the same time as this thesis, i.e. in April 2021. Therefore, this thesis is meant to describe the initial results of this project, being the concrete objectives:
+The project "Online in-hand object tracking and grasp failure detection with an event-based camera" is planned to be completed in at least 1 year, and it has started at the same time as this thesis, i.e. in April 2021. Therefore, this thesis is meant to describe the initial results of this project, being the concrete objectives to:
 
 \begin{itemize}
-	\item Setup the experimental environment: robot, gripper, event-based camera and objects to be manipulated.
-	\item Setup the software to execute pick and place motions and collect data.
-	\item Generate an initial dataset containing slip and non-slip cases in pick and place motions.
-	\item Explore of different methods to detect slip cases and compare them.
-	\item Build an initial algorithm capable of detecting slip cases in pick and place motions.
+	\item Set up the experimental environment: robot, gripper, event-based camera and objects to be manipulated.
+	\item Set up the software to execute pick-and-place motions and collect data.
+	\item Generate an initial dataset containing slip and non-slip cases in pick-and-place motions.
+	\item Explore different methods to detect slip cases and compare them.
 \end{itemize}
 
 \section{Assumptions and Scope}
 
-As the thesis is an initial part of the aforementioned Amazon project, for the purpose of this thesis it has been assumed that the pick and place motions happen in a non-cluttered environment, having only one pickable object in the scene. Moreover, the complete trajectory is given, including not only the shape of it, but also the initial and and final positions. Therefore, it is assumed that some external object recognition algorithm will recognize the object to be picked and provide its position. Finally, the there are no obstacles present in the environment, so that the trajectory is collision-free at all moments.\\
+As the thesis is an initial part of the aforementioned project, it has been assumed that the pick-and-place motions happen in a non-cluttered environment, having only one pickable object in the scene. Moreover, the complete trajectory is given, including not only the shape of it, but also the initial and final positions. Therefore, it is assumed that some external object recognition algorithm will recognize the object to be picked and provide its position. Finally, there are no obstacles present in the environment, so that the trajectory is collision-free at all moments.\\
 
-In terms of the scope, this study is focused on exploring different kinds of slips and grasping failures during manipulations, but only providing a solution for a particular kind of slip, namely rotational slip, which mainly occurs due to off-centered grasping of the object. In addition, the goal is only to detect such kind of slippage without trying to modify the trajectory with any kind of closed-loop control, which would use the information provided by the detection algorithm.
+In terms of the scope, this study explores different kinds of slips and grasping failures during manipulations, but only analyzing different slip detection methods for a particular kind of slip, namely the rotational slip, which mainly occurs due to off-centered grasping of the object. In addition, the goal is to detect only such kind of slippage without trying to modify the trajectory with any kind of closed-loop control, which would use the information provided by the detection algorithm.
 
 \section{Outline}
 
-\todo{Cite like this: \Cref{sec:introduction}}
+The rest of thesis is organized as follows. \Cref{sec:sota} presents the two principal components used for this project, event-based cameras and robotic arms, and a summary of the main related work regarding slip detection. Then, the experiment setup is described in \Cref{sec:setup}, which has been used to collect real data of slip and non-slip cases during pick-and-place motions, as detailed in \Cref{sec:data}. With the collected data, an exploration of different methods for slip detection has been made, the results of which have been reported in \Cref{sec:methods}. Finally, in \Cref{sec:conclusions}, an overview of the thesis is presented with its limitations and the future work.
+

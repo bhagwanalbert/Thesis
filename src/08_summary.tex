@@ -1,58 +1,34 @@
 \cleardoublepage
-\chapter{Summary and Further Work}\minitoc\label{sec:summary}\vspace{.5cm}
+\chapter{Conclusions}\label{sec:conclusions}
 
-\section{Overview}
+\section{Summary}
 
-\begin{wrapfigure}{r}{0.2\textwidth}
-    \centering
-    \includegraphics[width=0.2\textwidth]{resources/images/example3}
-\end{wrapfigure}
+In this work, we perform an exploration of different methods for slip detection during object manipulation in pick-and-place operations using a robot arm with an attached event-based camera, which presents several advantages over frame-based cameras, making it really appropriate for highly responsive systems. Concretely, it has high temporal resolution, low latency, high dynamic range and low power consumption.\\
 
-\sidenote{Contributions}
-\todomid{write}
+First, we designed and built the experimental setup, which consists of a robot system, called Panda, including a robot arm and its controller, a two-finger parallel gripper to manipulate the object, the DAVIS 346 camera and a computer connected to it and to the controller of the robot arm and gripper. In addition, to attach the DAVIS 346 to the robot arm and gripper, a mount has been designed and printed, in order to have an external view of the contact between the object and the gripper, while having the camera robustly attached to the robot and offering flexibility when it comes to the position and orientation of the camera with respect to the gripper. Moreover, the software has been set up to execute a desired trajectory during the pick-and-place motion.\\
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.55\textwidth]{resources/images/example3}
-    \caption{Placement of the outlook in the structure of research}\label{fig:hourglass:outlook}
-\end{figure}
+Then, some small sets of data were recorded, containing slip and non-slip cases during pick-and-place motions with different objects and backgrounds. After analyzing different ways of inducing slip and grasping failures, we focused our efforts in off-centered grasping to produce rotational slip. In total three sets of data have been collected, which have been studied and analyzed iteratively to discover new sources of information that were necessary to be recorded, generating the necessity of recording new sets of data.\\
 
-\sidenote{Dissemination}
-\todomid{write about \Cref{fig:hourglass:outlook}}
+In terms of the methods tested to determine slip cases, they can be classified in two main groups, depending on the source of information used. On the one hand, the first one considers that whenever a slip occurs, the object moves with respect to the camera (also to the robot arm and gripper), which generates events due to the texture of the object, producing an increase in the number of events in the region where the object is present. To separate the object from the background, three ways have been analyzed and compared, namely, the fixed RoI, the weighted mask and the variable mask approaches. Once the events from the object are separated, the event rate and ratio signals are computed, which can be thresholded to detect slip. On the other hand, a slip can be detected by estimating the motion of the scene through optical flow, which is obtained using EV-FlowNet ~\cite{evflownet}. Whenever, a rotational slip occurs, the object presents mainly vertical motion, that is why the horizontal and vertical absolute mean velocities are computed separately, so that thresholding the vertical one, slip can be detected. To separate the object's motion from the background, in this case, the fixed RoI and weighted mask approaches have been compared.\\
 
-\section{Conclusions and Impact}
+For the ratio signal, the fixed RoI presents several disadvantages, e.g. it needs to be annotated for each experiment, it fails in cases where the object's shape changes significantly from the camera's view and it is not robust to changes in the background's texture. With the weighted mask approach these issues are solved, however the threshold still depends on the object's texture. Moreover, the weighted mask and variable mask approaches present similar results, but the variable mask one is quite brittle and requires of extra computations.\\
 
-\sidenote{Context}
-\todomid{write}
+On the contrary, for the vertical absolute mean velocity signal, the fixed RoI works robustly in all scenarios, while the weighted mask approach fails in one of the experiments, producing false positives.\\
 
-\sidenote{Contribution 1}
-\todomid{write}
+Both described methods are informative about rotational slip, however, the ratio signal is easier to threshold, as it is bounded between 0 and 1, compared to the vertical absolute mean velocity one, which is not bounded.
 
-\sidenote{Contribution 2}
-\todomid{write}
+\section{Limitations and Future Work}
 
-\sidenote{Contribution 3}
-\todomid{write}
+The designed 1D signals, which were intended to be thresholded and detect slip, are not robust enough to work in different scenarios. The ratio signal is sometimes not enough to differentiate between a non-slip and a slip case and in highly textured backgrounds, the orientation of the motion is not properly estimated, thus, the vertical absolute mean velocity may not be enough to detect slip. All in all, these handcrafted 1D signals are a first step to understand slip detection, but are not enough to generalize in different scenarios and detect slip robustly.\\
 
-\section{Outlook}
+There are several ideas that we had in mind, but could not execute them in the time frame of this thesis. First, in Set 2, the camera's angular velocity was recorded along with the other data to compute the motion flow of the scene. The idea behind that is to estimate the background's motion through these known velocities and compare them to the optical flow, in order to detect anomalies between the predicted motion and the real one, being these anomalies, independent motion corresponding to slips.\\
 
-\sidenote{Intro}
-\todomid{write}
+Also, in order to separate the object properly from the background, we tried to identify independently moving objects in the scene, where the background should be identified ideally as a single object and the manipulated object, if there is no slip, it is not a moving object, but if it rotates it should be identified as another independently moving object. We tried to use a novel event-based motion segmentation method ~\cite{motionsegmentation}, but the segmentation was not properly done. Therefore, we assume that the algorithm needs to be fine-tuned to our concrete problem, constraining to the kind of motion we are executing. However, this implies the modification of the motion segmentation code, which is out of the scope of this work.\\
 
-\sidenote{Application Area 1}
-\todomid{write about \Cref{fig:outlook:aa1}}
+We have seen that the ratio of events and the vertical velocity are informative of slip detection, however, thresholding these signals is not generalizable. Therefore, this information can be used as input to supervised learning methods. Nevertheless, to explore this possibility and be able to train and validate the models, much more data is needed, which includes repeated pick-and-place motions of diverse daily use objects with balanced non-slip and slip cases. Moreover, this dataset should be labeled, which can be done using the motion capture system, i.e. the OptiTrack. To this end, Set 3 was recorded, where the relative pose between the gripper and the object changes when there is a slip. This motion capture system can be used as ground-truth, but not for usual slip detection, as the system is not practical nor flexible to use in general scenarios.\\
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.85\textwidth]{resources/images/example3}
-    \caption{Area 1~\cite{li2002design}}\label{fig:outlook:aa1}
-\end{figure}
+Finally, the slip detection problem can be analyzed in non-cluttered environment, picking one object among several objects, which is a more realistic scenario but considered out of the scope of this thesis.\\
 
-\sidenote{Application Area 2}
-\todomid{write}
+Once this rotational slip detection problem is solved, linear slip and other grasping failures should be considered. Moreover, to complete the ARA project, once these slips and grasp failures are detected, the pick-and-place motion should be modified appropriately in order to complete it successfully, using the feedback of the slip and failure detection algorithm.
 
-\sidenote{Application Area 3}
-\todomid{write}
 
-\sidenote{Application Area 4}
-\todomid{write}
